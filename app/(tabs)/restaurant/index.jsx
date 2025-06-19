@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Home screen</Text>
+      <Text style={styles.text}>restaurant</Text>
       {/* <Link href="/about" style={styles.button}>
         Go to About screen
       </Link> */}

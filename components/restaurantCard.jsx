@@ -16,7 +16,7 @@ export default function RestaurantCard({ item }) {
   const handleRestaurant = () => {
     if (item && item.id) {
       dispatch(setRestaurant({ ...item }));
-      router.push({ pathname: "restaurant" });
+      router.push("(main)/restaurant");
     }
   };
   return (

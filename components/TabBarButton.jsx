@@ -10,7 +10,6 @@ import { icons } from "../assets/icons";
 
 const TabBarButton = (props) => {
   const { isFocused, label, routeName, color } = props;
-  console.log(props);
 
   const scale = useSharedValue(0);
 
@@ -57,7 +56,7 @@ const TabBarButton = (props) => {
           animatedTextStyle,
         ]}
       >
-        {label}
+        {routeName}
       </Animated.Text>
     </Pressable>
   );

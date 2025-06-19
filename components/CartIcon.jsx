@@ -14,7 +14,7 @@ export default function CartIcon() {
   return (
     <View className="absolute bottom-5 w-full z-50">
       <TouchableOpacity
-        onPress={() => navigation.navigate("Cart")}
+        onPress={() => navigation.navigate("(main)/cart")}
         style={{ backgroundColor: themeColors.bgColor(1) }}
         className="flex-row justify content items-center mx-5 rounded-full p-4 py-3 shadow-lg"
       >

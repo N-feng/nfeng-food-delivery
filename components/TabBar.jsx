@@ -16,9 +16,9 @@ const TabBar = ({ state, descriptors, navigation }) => {
               ? options.title
               : route.name;
 
-        if (["_sitemap", "+not-found"].includes(route.name)) return null;
+        const routeName = route.name.split("/")[0];
 
-        console.log(route.name);
+        if (["_sitemap", "+not-found"].includes(route.name)) return null;
 
         const isFocused = state.index === index;
 
@@ -48,7 +48,7 @@ const TabBar = ({ state, descriptors, navigation }) => {
             onPress={onPress}
             onLongPress={onLongPress}
             isFocused={isFocused}
-            routeName={route.name}
+            routeName={routeName}
             color={isFocused ? primaryColor : greyColor}
             label={label}
           />

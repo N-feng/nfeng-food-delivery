@@ -8,7 +8,7 @@ export default function TabsNavigation() {
     <>
       <Tabs tabBar={(props) => <TabBar {...props} />}>
         <Tabs.Screen
-          name="favorites"
+          name="favorites1"
           options={{
             title: "Favorites",
             tabBarIcon: ({ color }) => (
