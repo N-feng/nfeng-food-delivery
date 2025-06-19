@@ -1,6 +1,5 @@
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import React from "react";
-import { AntDesign, Feather } from "@expo/vector-icons";
+import { StyleSheet, View } from "react-native";
 import TabBarButton from "./TabBarButton";
 
 const TabBar = ({ state, descriptors, navigation }) => {
@@ -14,10 +13,12 @@ const TabBar = ({ state, descriptors, navigation }) => {
           options.tabBarLabel !== undefined
             ? options.tabBarLabel
             : options.title !== undefined
-            ? options.title
-            : route.name;
+              ? options.title
+              : route.name;
 
         if (["_sitemap", "+not-found"].includes(route.name)) return null;
+
+        console.log(route.name);
 
         const isFocused = state.index === index;
 

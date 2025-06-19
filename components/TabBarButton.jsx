@@ -1,15 +1,16 @@
-import { View, Text, Pressable, StyleSheet } from "react-native";
 import React, { useEffect } from "react";
-import { icons } from "../assets/icons";
+import { Pressable, StyleSheet } from "react-native";
 import Animated, {
   interpolate,
   useAnimatedStyle,
   useSharedValue,
   withSpring,
 } from "react-native-reanimated";
+import { icons } from "../assets/icons";
 
 const TabBarButton = (props) => {
   const { isFocused, label, routeName, color } = props;
+  console.log(props);
 
   const scale = useSharedValue(0);
 
@@ -41,9 +42,10 @@ const TabBarButton = (props) => {
   return (
     <Pressable {...props} style={styles.container}>
       <Animated.View style={[animatedIconStyle]}>
-        {icons[routeName]({
-          color,
-        })}
+        {icons[routeName] &&
+          icons[routeName]({
+            color,
+          })}
       </Animated.View>
 
       <Animated.Text

@@ -1,15 +1,29 @@
 import { useNavigation } from "@react-navigation/native";
+import { useRouter } from "expo-router";
 import React from "react";
 import { Image, Text, TouchableWithoutFeedback, View } from "react-native";
 import * as Icon from "react-native-feather";
 import { themeColors } from "../theme";
 
+import { useDispatch } from "react-redux";
+import { setRestaurant } from "../slices/restaurantSlice";
+
 export default function RestaurantCard({ item }) {
   const navigation = useNavigation();
+  const router = useRouter();
+
+  const dispatch = useDispatch();
+  const handleRestaurant = () => {
+    if (item && item.id) {
+      dispatch(setRestaurant({ ...item }));
+      router.push({ pathname: "restaurant" });
+    }
+  };
   return (
     <View>
       <TouchableWithoutFeedback
-        onPress={() => navigation.navigate("Restaurant", { ...item })}
+        // onPress={() => navigation.navigate("restaurant", { ...item })}
+        onPress={handleRestaurant}
       >
         <View
           style={{
